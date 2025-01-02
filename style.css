@@ -1,15 +1,18 @@
 body {
-  margin: 0;
   padding: 40px;
   background-color: #1b2632;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #d6dde6;
+
+  max-width: 90%;
+  margin: 0 auto; /* Center the container */
+  padding: 0 16px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  background-color: #1b2632;
+
   box-sizing: border-box;
 }
 
@@ -17,7 +20,7 @@ ul {
   list-style-type: none;
 }
 h1 {
-  font-size: 56px;
+  font-size: 72px;
 }
 
 h2 {
@@ -40,15 +43,16 @@ p {
   font-size: 16px;
 }
 
+/* Header */
 .header {
   background-color: #1b2632;
-  padding-left: 40px;
-  padding-right: 40px;
+
   display: flex;
   flex-flow: row;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid white;
 }
 
 .header-items-menu {
@@ -58,45 +62,71 @@ p {
   gap: 24px;
 }
 
+.title-header-spacing {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* Cards */
+
 .movie-card {
   display: flex;
   flex-direction: column;
-
+  position: relative; /* Ensure the image can be positioned absolutely */
   padding: 16px;
-  background-color: rgb(220, 222, 224, 0.1);
-  border-radius: 15px;
+  background-color: rgba(220, 222, 224, 0.1);
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent the image from overflowing the container */
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
 }
 
 .movies-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(331px, 1fr));
   gap: 16px;
+  margin-top: 24px;
+}
+
+.image-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.movie-description-content {
+  padding-bottom: 16px;
 }
 
 .movie-ticket-description {
   display: flex;
   width: 100%; /* Ensure it fills the width of the parent */
-  padding: 18px 24px;
+  padding: 24px 24px;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
   overflow: hidden;
+  background-color: #080f17;
 }
 
 .movie-status {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Ensure items are spaced out */
-  width: 100%; /* Ensure it fills the width of the parent */
+  justify-content: space-between;
+  width: 100%;
 }
 
 .calification {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  align-items: center; /* Align items vertically centered */
+  align-items: center;
 }
 
 .main-button {
@@ -107,8 +137,8 @@ p {
   border-radius: 8px;
   background: #a7ee43;
   color: #000a14;
-  outline: none; /* Remove the outline */
-  border: none; /* Remove the border if needed */
+  outline: none;
+  border: none;
 
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 15px;
@@ -120,4 +150,62 @@ p {
 
 .main-button:hover {
   background: #a9e866; /* Darker shade of green for hover state */
+}
+
+/*filter menu*/
+
+.filter-menu {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-menu select,
+.filter-menu button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(214, 221, 230, 0.2);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  color: white;
+  background-color: #080f17;
+  appearance: none; /* Remove default arrow */
+  position: relative;
+}
+
+.filter-select {
+  padding-right: 32px;
+}
+
+.filter-select::after {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: white;
+}
+
+.description-movie-component {
+  grid-template-columns: 1fr 1fr;
+}
+
+.tag-buttons {
+  display: flex;
+  gap: 8px;
+}
+.tag-button {
+  color: #000a14;
+  font-family: "Plus Jakarta Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 166.667% */
+  border-radius: 8px;
+  outline: none;
+  border: none;
+
+  display: inline-block;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
 }

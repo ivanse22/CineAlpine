@@ -23,11 +23,31 @@
       </div>
     </div>
 
-    <div><h3>Featured Movies</h3></div>
-    <button>Genre</button>
-    <button>Genre</button>
+    <div class="title-header-spacing">
+      <h4>Featured Movies</h4>
+    </div>
+
+    <div class="filter-menu">
+      <select id="genre-filter">
+        <option value="">Select Genre</option>
+        <option value="action">Action</option>
+        <option value="drama">Drama</option>
+        <option value="comedy">Comedy</option>
+        <option value="sci-fi">Sci-Fi</option>
+        <!-- Add more genres as needed -->
+      </select>
+      <select id="classification-filter">
+        <option value="">Select Classification</option>
+        <option value="new">New</option>
+        <option value="popular">Popular</option>
+        <option value="top-rated">Top Rated</option>
+        <!-- Add more classifications as needed -->
+      </select>
+      <button onclick="filterMovies()">Filter</button>
+    </div>
+
     <section class="movies-list">
-      <div class="movie-card">
+      <div class="movie-card" data-genre="sci-fi" data-classification="new">
         <img
           src="/images/poster-interestellar.png"
           alt="Interestellar Poster"
@@ -48,27 +68,20 @@
         </div>
       </div>
       <div class="movie-card">
-        <img src="/images/poster-anothermovie.png" alt="Another Movie Poster" />
-        <div class="movie-ticket-description">
-          <h5>Another Movie</h5>
-          <p>Another movie description goes here.</p>
-        </div>
-      </div>
-      <div class="movie-card">
-        <img
-          src="/images/poster-interestellar.png"
-          alt="Interestellar Poster"
+        <img class="image-poster"
+          src="/images/alien-poster.png"
+          alt="Alie Romulus"
         />
         <div class="movie-ticket-description">
           <div class="movie-status">
             <p>Nuevo</p>
             <div class="calification">
               <img src="/images/star-filled.svg" alt="" />
-              <p>4.6</p>
+              <p>4.9</p>
             </div>
           </div>
           <div class="movie-description-content">
-            <h5>Interestellar</h5>
+            <h5>Alien Romulus</h5>
             <p>Una aventura épica en el mundo de Pandora.</p>
           </div>
           <button class="main-button">See Description</button>
@@ -77,6 +90,26 @@
 
       <div class="movie-card">
         <img
+          src="/images/backtothefuture-poster.png"
+          alt="Interestellar Poster"
+        />
+        <div class="movie-ticket-description">
+          <div class="movie-status">
+            <p>Nuevo</p>
+            <div class="calification">
+              <img src="/images/star-filled.svg" alt="" />
+              <p>4.6</p>
+            </div>
+          </div>
+          <div class="movie-description-content">
+            <h5>Interestellar</h5>
+            <p>Una aventura épica en el mundo de Pandora.</p>
+          </div>
+          <button class="main-button">See Description</button>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img
           src="/images/poster-interestellar.png"
           alt="Interestellar Poster"
         />
@@ -96,31 +129,42 @@
         </div>
       </div>
       <div class="movie-card">
-        <img src="/images/poster-anothermovie.png" alt="Another Movie Poster" />
+        <img
+          src="/images/poster-interestellar.png"
+          alt="Interestellar Poster"
+        />
         <div class="movie-ticket-description">
-          <h5>Another Movie</h5>
-          <p>Another movie description goes here.</p>
+          <div class="movie-status">
+            <p>Nuevo</p>
+            <div class="calification">
+              <img src="/images/star-filled.svg" alt="" />
+              <p>4.6</p>
+            </div>
+          </div>
+          <div class="movie-description-content">
+            <h5>Interestellar</h5>
+            <p>Una aventura épica en el mundo de Pandora.</p>
+          </div>
+          <button class="main-button">See Description</button>
         </div>
       </div>
     </section>
-    <section>
+    <section class="description-movie-component">
       <div>
         <img src="" alt="" />
-        <div>
-          <h2>Back to the Future</h2>
-          <button>Sci-fi</button>
-          <button>Horror</button>
-          <button>Action</button>
-          <p>
-            Lacus amet nunc duis eu ac leo molestie. Quisque purus ridiculus est
-            morbi vulputate aliquam at. Vitae feugiat curabitur mauris arcu enim
-            nec nunc. Morbi erat id amet pellentesque erat accumsan magnis dis
-            at. Dui mauris quisque dis consectetur lorem tempus hac.
-          </p>
-          <button>But Tickets</button>
+        <h2>Back to the Future</h2>
+        <div class="tag-buttons">
+          <button class="tag-button">Sci-Fi</button>
+          <button class="tag-button">Horror</button>
+          <button class="tag-button">Horror</button>
         </div>
-      </div>
-
+        
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          vestibulum, nunc nec aliquam. Quisque purus ridiculus est morbi
+          vulputate aliquam at. Vitae feugiat curabitur .
+        </p>
+        <button class="main-button">Buy Tickets</button>
       <div>
         <div>
           <h4>Title</h4>
@@ -162,7 +206,7 @@
       </div>
     </section>
     <section>
-      <h2>Select your seats</h2>
+      <h3>Select your seats</h3>
       <div>
         <h3>Your seats</h3>
         <img src="" alt="" />
